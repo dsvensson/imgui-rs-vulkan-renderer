@@ -23,7 +23,7 @@ imgui = "^0.11"
 ash = { git = "https://github.com/ash-rs/ash.git", rev = "d0d5ea1370ff2b3b5a49ed5b6866e1e4bd353de1", default-features = false, features = ["debug"] }
 ultraviolet = "0.9"
 
-gpu-allocator = { path = "../gpu-allocator" }
+gpu-allocator = { git = "https://github.com/dsvensson/gpu-allocator", rev = "fa4c75d35959391da1ebf4e92951a6175cc3de44" }
 
 vk-mem = { version = "0.2", optional = true }
 
