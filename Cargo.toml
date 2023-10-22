@@ -20,15 +20,16 @@ exclude = [
 thiserror = "1.0"
 log = "0.4"
 imgui = "^0.11"
-ash = { version = ">=0.34, <=0.37", default-features = false, features = ["debug"] }
+ash = { git = "https://github.com/ash-rs/ash.git", rev = "d0d5ea1370ff2b3b5a49ed5b6866e1e4bd353de1", default-features = false, features = ["debug"] }
 ultraviolet = "0.9"
 
-gpu-allocator = { version = "0.23", default-features = false, features = ["vulkan"], optional = true }
+gpu-allocator = { path = "../gpu-allocator" }
 
 vk-mem = { version = "0.2", optional = true }
 
 [features]
 dynamic-rendering = []
+gpu-allocator = []
 
 [patch.crates-io]
 # Forked version for ash compatibility. Original repo is not maintained anymore.
@@ -39,8 +40,8 @@ simple_logger = "4.0"
 winit = "0.27"
 imgui = { version = "^0.11", features = ["tables-api"] }
 imgui-winit-support = "^0.11"
-ash = { version = "0.37", default-features = false, features = ["debug", "linked"] }
-ash-window = "0.12"
+ash = { git = "https://github.com/ash-rs/ash.git", rev = "d0d5ea1370ff2b3b5a49ed5b6866e1e4bd353de1", default-features = false, features = ["debug", "linked"] }
+ash-window = { git = "https://github.com/ash-rs/ash.git", rev = "d0d5ea1370ff2b3b5a49ed5b6866e1e4bd353de1" }
 raw-window-handle = "0.5"
 image = "0.24"
-imgui-rs-vulkan-renderer = { path = ".", features = ["gpu-allocator"] }
+imgui-rs-vulkan-renderer = { path = "." }
